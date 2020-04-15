@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		var command = {
+		  "type": "AddStationCommand",
+		  "station": {
+		    "name": "SWR"
+		  }
+		}
+	    $.ajax({
+			type: "POST",
+			url: "http://localhost:8080/execute",
+			data: JSON.stringify(command),
+			success: (res) => {
+				console.log(res);
+			},
+			contentType: "application/json",
+			dataType: "json",
+			processData: false
+	    });
+		
+		var listcommand = {
+		  "type": "ListStationCommand"
+		}
+	    $.ajax({
+			type: "POST",
+			url: "http://localhost:8080/execute",
+			data: JSON.stringify(listcommand),
+			success: (res) => {
+				console.log(res);
+			},
+			contentType: "application/json",
+			dataType: "json",
+			processData: false
+	    });
+  </script>
+
+</body>
+</html>
