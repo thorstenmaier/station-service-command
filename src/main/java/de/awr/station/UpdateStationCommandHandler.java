@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 import de.awr.CommandHandler;
 
 @Component
-public class UpdateStationCommandHandler implements CommandHandler<UdpateStationCommand, StationResult> {
+public class UpdateStationCommandHandler implements CommandHandler<UpdateStationCommand, StationResult> {
 	
 	@Autowired
 	private StationRepository stationRepository;
 
 	@Override
-	public StationResult execute(UdpateStationCommand c) {
+	public StationResult execute(UpdateStationCommand c) {
 		return new StationResult(stationRepository.save(c.getStation()));
 	}
 
 	@Override
-	public Class<UdpateStationCommand> getCommandType() {
-		return UdpateStationCommand.class;
+	public Class<UpdateStationCommand> getCommandType() {
+		return UpdateStationCommand.class;
 	}
 
 }

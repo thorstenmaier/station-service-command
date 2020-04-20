@@ -2,7 +2,7 @@ package de.awr.station;
 
 import de.awr.Command;
 
-public class UdpateStationCommand extends Command<StationResult> {
+public class UpdateStationCommand extends Command<StationResult> {
 
 	private Station station;
 
