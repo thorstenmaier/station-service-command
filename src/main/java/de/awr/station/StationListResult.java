@@ -4,11 +4,11 @@ import java.util.List;
 
 import de.awr.Result;
 
-public class ListStationResult implements Result {
+public class StationListResult implements Result {
 
 	private final List<Station> stations;
 
-	public ListStationResult(List<Station> stations) {
+	public StationListResult(List<Station> stations) {
 		this.stations = stations;
 	}
 
